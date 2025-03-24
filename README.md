@@ -70,3 +70,5 @@ http://localhost:3001/api-docs/
 
 - **Paris** :
 http://localhost:3002/api-docs/
+
+Le contenu de ces interfaces est disponible dans les deux pdf dans le dossier "annexe".
