@@ -51,7 +51,8 @@ Clonez ce dépôt sur votre machine locale :
 > git clone https://github.com/KDamache/bet-rav.git
 
 Se déplacer dans le bon dossier :
-> cd bet-rav/project
+> cd bet-rav
+> cd project
 
 ### Lancer les services avec Docker
 Construisez les images Docker :
