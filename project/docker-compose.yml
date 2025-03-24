@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_AUTH_API_URL=http://localhost:3001
+      - VITE_BETTING_API_URL=http://localhost:3002
+    depends_on:
+      - auth-service
+      - betting-service
+
+  auth-service:
+    build:
+      context: ./auth-service
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/betrav-auth
+      - JWT_SECRET=your-secret-key
+      - PORT=3001
+    depends_on:
+      - mongodb
+
+  betting-service:
+    build:
+      context: ./betting-service
+      dockerfile: Dockerfile
+    ports:
+      - "3002:3002"
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/betrav-betting
+      - JWT_SECRET=your-secret-key
+      - PORT=3002
+      - ODDS_API_KEY=59f9bc62fab0aeab9fd34e5122feb353
+      - AUTH_SERVICE_URL=http://auth-service:3001
+    depends_on:
+      - mongodb
+      - auth-service
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:
