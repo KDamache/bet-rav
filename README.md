@@ -72,3 +72,6 @@ http://localhost:3001/api-docs/
 http://localhost:3002/api-docs/
 
 Le contenu de ces interfaces est disponible dans les deux pdf dans le dossier "annexe".
+
+## Support
+N'hésitez pas à créer des tickets au moindre questionnement ou comportement qui semble non prévu/expliqué dans le readme. Notre équipe est réactive :)
