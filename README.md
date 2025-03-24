@@ -47,10 +47,11 @@ Assurez-vous que Docker Desktop soit installé et lancé sur votre machine :
 - [Docker Desktop](https://www.docker.com/)
 
 ### Cloner le dépôt
-
 Clonez ce dépôt sur votre machine locale :
-> git clone https://github.com/KDamache/bet-rav.git 
-> cd plateforme-paris-sportifs/project
+> git clone https://github.com/KDamache/bet-rav.git
+
+Se déplacer dans le bon dossier :
+> cd bet-rav/project
 
 ### Lancer les services avec Docker
 Construisez les images Docker :
@@ -63,7 +64,7 @@ Cela démarrera les services backend et frontend.
 Vous pourrez accéder à l'application sur http://localhost:5173.
 
 ### Accéder à l'API
-L'API peut être testée en accédant à l'interface Swagger aux adresses suivante :
+L'API peut être testée en accédant à l'interface Swagger aux adresses suivante (après avoir lancé les services avec Docker Compose):
 - **Authentification** :
 http://localhost:3001/api-docs/
 
